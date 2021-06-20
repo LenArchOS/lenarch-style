@@ -1,9 +1,9 @@
-# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+# Maintainer: Lena Voytek <lena@voytek.dev>
 
-pkgname=archcraft-fonts
+pkgname=lenarch-fonts
 pkgver=1.0
 pkgrel=1
-pkgdesc="Fonts for Archcraft OS."
+pkgdesc="Fonts for LenArch."
 arch=('any')
 license=('GPL')
 provides=($pkgname)
