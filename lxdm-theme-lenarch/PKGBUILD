@@ -1,0 +1,15 @@
+# Maintainer: Lena Voytek <lena@voytek.dev>
+
+pkgname=lxdm-theme-lenarch
+pkgver=1.0
+pkgrel=1
+pkgdesc="The default lxdm theme for LenArch."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=('lxdm-gtk3')
+
+package() {
+	install -D -m644 lenarch/* -t ${pkgdir}/usr/share/lxdm/themes/lenarch
+}
