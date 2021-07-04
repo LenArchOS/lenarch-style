@@ -6,7 +6,7 @@ FONTS_OUT := $(wildcard $(OUTDIR)/lenarch-fonts*.pkg.tar.zst)
 PIXMAPS_OUT := $(wildcard $(OUTDIR)/lenarch-pixmaps*.pkg.tar.zst)
 
 .PHONY:all
-all:LXDM_OUT FONTS_OUT
+all:LXDM_OUT FONTS_OUT PIXMAPS_OUT
 
 .PHONY:lxdm
 lxdm:LXDM_OUT
