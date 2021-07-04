@@ -3,6 +3,7 @@ OUTDIR ?= build
 
 LXDM_OUT := $(wildcard $(OUTDIR)/lxdm-theme-lenarch*.pkg.tar.zst)
 FONTS_OUT := $(wildcard $(OUTDIR)/lenarch-fonts*.pkg.tar.zst)
+PIXMAPS_OUT := $(wildcard $(OUTDIR)/lenarch-pixmaps*.pkg.tar.zst)
 
 .PHONY:all
 all:LXDM_OUT FONTS_OUT
@@ -13,6 +14,9 @@ lxdm:LXDM_OUT
 .PHONY:fonts
 fonts:FONTS_OUT
 
+.PHONY:pixmaps
+pixmaps:PIXMAPS_OUT
+
 LXDM_OUT:lxdm-theme-lenarch/PKGBUILD
 	mkdir -p $(OUTDIR)
 	(cd lxdm-theme-lenarch && makepkg -fs)
@@ -22,6 +26,11 @@ FONTS_OUT:lenarch-fonts/PKGBUILD
 	mkdir -p $(OUTDIR)
 	(cd lenarch-fonts && makepkg -fs)
 	mv lenarch-fonts/*.pkg.tar.zst $(OUTDIR)/
+
+PIXMAPS_OUT:lenarch-pixmaps/PKGBUILD
+	mkdir -p $(OUTDIR)
+	(cd lenarch-pixmaps && makepkg -fs)
+	mv lenarch-pixmaps/*.pkg.tar.zst $(OUTDIR)/
 
 .PHONY:clean
 clean:

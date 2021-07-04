@@ -1,0 +1,16 @@
+# Maintainer: Lena Voytek <lena@voytek.dev>
+
+pkgname=lenarch-pixmaps
+pkgver=1.0
+pkgrel=1
+pkgdesc="LenArch icons"
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	# copy files
+	install -Dm 644 icons/* -t ${pkgdir}/usr/share/pixmaps/
+}
